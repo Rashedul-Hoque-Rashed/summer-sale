@@ -10,7 +10,19 @@ function getItemPrice(mainItemPrice, cartTotalPrice, totalWithDiscount){
     
     const allTotal = document.getElementById(totalWithDiscount);
     allTotal.innerText = totalPrice.innerText;
+
+
+    const apply = document.getElementById('apply-btn');
+    const total = document.getElementById('total');
+    if (total.innerText > 200) {
+        apply.disabled = false;
+    }
+    const makePurchase = document.getElementById('purchase');
+    if (total.innerText > 0) {
+        makePurchase.disabled = false;
+    }
 }
+
 function getSelectedItem(itemName, cartItem){
     const selectedItem = document.getElementById(itemName);
     const name = selectedItem.innerText;
